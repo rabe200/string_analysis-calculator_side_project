@@ -1,10 +1,11 @@
+import { analyzeArray } from "./components/analyze/analyze.js";
 console.clear()
 
 //funktioniert , solange hinter der letzten ziffer ein plus ist ?!?! gelöst durch zusätzliche variable, die operator.length + 1 speichert
-const string = '1/2*3+4+5+6/7+2+44-32323232+11111+213232132'
-const operatorIndexInString = []
-const operator = []
-let number = [];
+export const string = '1/2*3+4+5+6/7+2+44-32323232+11111+213232132'
+export const operatorIndexInString = []
+export const operator = []
+export let number = [];
 for (let i = 0; i < string.length; i++) {
   if (string[i] === '+' || string[i] === '-' || string[i] === '*' || string[i] === '/') {
     // diese iteration funktioniert, weil der index des erstellten arrays eine eigene zählung hat!
@@ -12,54 +13,11 @@ for (let i = 0; i < string.length; i++) {
     operator[operator.length] = string[i];
   }
 }
-
-console.log('operatorIndexInString: ', operatorIndexInString, 'operator: ', operator)
-console.log('------')
-
-
-const x = operator.length +1;
-for (let i=0; i<x; i++) {
-  console.log('iteratorIndex',i);  
-  console.log('operatorIndexInString', operatorIndexInString[i]);
-  if (i<1) {
-  console.log('---0')
-  console.log(string.slice(i, operatorIndexInString[i]));
-  number[i] = string.slice(i, operatorIndexInString[i]);
-  console.log(number[i]);
-} else if (i<2 ) {
-  console.log('---1')
-  let operatorIndexInStringPlusOne = operatorIndexInString[i-1] + 1;
-  number[i] = string.slice(operatorIndexInStringPlusOne, operatorIndexInString[i]);
-  console.log('numberArray of i', number[i]);
-  console.log('i',i);
-} else if (i>=2) {
-  console.log('---2')
-  let operatorIndexInStringPlusOne = operatorIndexInString[i-1] + 1;
-  number[i] = string.slice(operatorIndexInStringPlusOne, operatorIndexInString[i]);
-  console.log(number[i]);
-  console.log('i', i, 'operator.length', operator.length);
-  }}
-
-
-console.log(number);
-
-const evenOrOdd = (string) => {
-  if (parseInt(string.length, 10) % 2 == 0){
-      console.log('string.length', string);
-     console.log('even');}
-  else
-  {console.log('string.length', string);
-     console.log ('Odd');
-    }}
-
-function add (a, b) {
-  sum = a + b;
-  console.log(sum);
-}
+analyzeArray();
 
 // for (let i=0; i<number.length; i++) {
 //   console.log(i);
-//   a=number[i];
+//   a=number[i];   
 //   console.log('a:',a);
 //   b=number[i+1];
 //   console.log('b:',b);
