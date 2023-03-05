@@ -1,16 +1,17 @@
-README
 
-before implementing into main project
-i here do some experiments and test them without any gui
-goal is to analyse a complete string:
-find numbers and put them as string into array
-find mathematical operators and trigger calculation
+# README
 
-as i am still just a trainee, this is quite a challenge for me.
-i try to use what i have learned at neueFisch bootcamp
-but there is still a lot of research needed
-this is a private project
+<p>before implementing into main project<br>
+i here do some experiments and test them without any gui<br>
+goal is to analyse a complete string:<br>
+find numbers and put them as string into array<br>
+find mathematical operators and trigger calculation<br>
 
-i think it is a very useful practise
-i plan to develop different kind of calculators
-so this is the preBeta-sidecode for my first calculator
+<p>as i am still just a trainee, this is quite a challenge for me. <br>
+i try to use what i have learned at neueFisch bootcamp <br>
+but there is still a lot of research needed<br>
+this is a private project<br>
+
+<p>i think it is a very useful practise<br>
+i plan to develop different kind of calculators<br>
+so this is the preBeta-sidecode for my first calculator<br>
