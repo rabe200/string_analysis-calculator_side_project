@@ -1,19 +1,23 @@
 import { analyzeArray } from "./components/analyze/analyze.js";
 console.clear()
-
+import { handleOperators } from "./components/handleOperators/handleOperators.js";
+import { findOperator } from "./components/handleOperators/handleOperators.js";
+import { operatorIndexArray } from "./components/handleOperators/handleOperators.js";
 //funktioniert , solange hinter der letzten ziffer ein plus ist ?!?! gelöst durch zusätzliche variable, die operator.length + 1 speichert
-export const string = '1/2*3+4+5+6/7+2+44-32323232+11111+213232132'
+export const string = '1-2*3+4-3+5'
 export const operatorIndexInString = []
 export const operator = []
-export let number = [];
+export let numbers = [];
 for (let i = 0; i < string.length; i++) {
   if (string[i] === '+' || string[i] === '-' || string[i] === '*' || string[i] === '/') {
-    // diese iteration funktioniert, weil der index des erstellten arrays eine eigene zählung hat!
     operatorIndexInString[operatorIndexInString.length] = i;
     operator[operator.length] = string[i];
   }
 }
 analyzeArray();
+console.log(numbers);
+handleOperators();
+
 
 // for (let i=0; i<number.length; i++) {
 //   console.log(i);
@@ -49,25 +53,3 @@ analyzeArray();
 //also nun erstmal die if anfrage schreiben für die operators
 //außerdem: der funktion für die aufspaltung von zahlen in strings einer variablen zuweisen,  
 //um sie vor der if anfrage nach den operatoren direkt abzurufen
-
-
-  // console.log(number[i]);
-    // console.log(string.slice(i, operatorIndexInString([i+1]))
-
-
-
-
-
-
-
-
-// for (let i=0; i<number.length; i++) 
-
-
-// if (operator [i] === "+") {
-//   console.log('number', number[i]);
-//   console.log('number2', number[i+1]);
-//   i+2;
-//   // console.log('sum', sum[i]);
-// }
-// }
