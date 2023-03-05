@@ -7,7 +7,6 @@ function findCommonElements3(arr1, arr2) {
     }
  export const operatorIndexArray = []
 
-export const findOperator=[];
 export function handleOperators() {
      
 
@@ -17,17 +16,17 @@ let countStringIndex = 0;
 function arrayOperators()
 {   
     for (let i=0; i<string.length; i++) {
-   console.log(`TEST ${i}`)
+  //  console.log(`TEST ${i}`)
    let ix = operatorIndexInString;
    let check = [i];
    
     if (findCommonElements3(ix, check)) {  
-            console.log('check'); 
+            // console.log('check'); 
             operatorIndexArray[i] = [ix[countStringIndex], operator[countStringIndex]];
             countStringIndex++;
         }
           else {
-            console.log('fail'); 
+            // console.log('fail'); 
             operatorIndexArray[check]= []; 
         }
 }}

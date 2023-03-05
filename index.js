@@ -1,10 +1,9 @@
 import { analyzeArray } from "./components/analyze/analyze.js";
 console.clear()
 import { handleOperators } from "./components/handleOperators/handleOperators.js";
-import { findOperator } from "./components/handleOperators/handleOperators.js";
 import { operatorIndexArray } from "./components/handleOperators/handleOperators.js";
 //funktioniert , solange hinter der letzten ziffer ein plus ist ?!?! gelöst durch zusätzliche variable, die operator.length + 1 speichert
-export const string = '1-2*3+4-3+5'
+export const string = '1-2*3+4-3/5'
 export const operatorIndexInString = []
 export const operator = []
 export let numbers = [];
@@ -14,10 +13,79 @@ for (let i = 0; i < string.length; i++) {
     operator[operator.length] = string[i];
   }
 }
-analyzeArray();
-console.log(numbers);
-handleOperators();
+analyzeArray()
+handleOperators()
+// console.clear()
+console.log('numbers', numbers)
+console.log('operators', operatorIndexArray)
+console.log(operator)
+for (let i=0; i< operator.length;i++) {
+  console.log('i', i);
+  console.log(operator[i]);
+if (operator[i]==="/") {console.log('DIVIDE', operator[i]); divide(i)};
+if (operator[i]==="*") {console.log('MULTIPLY', operator[i]); multiply(i)};
+if (operator[i]==='+') {console.log('ADD', operator[i]); add(i)};
+if (operator[i]==="-") {console.log('SUBSTRACT', operator[i]); substract(i)};
 
+}
+
+function divide (iterator) {
+  console.log('initialize division');
+  getValues(iterator);
+  // const sum = a/b;
+}
+function multiply (iterator) {
+  console.log('initialize multiplication');
+  getValues(iterator);
+  // const sum= a*b;
+}
+function substract (iterator) {
+  console.log('initialize substraction');
+  getValues(iterator);
+  // const sum= a-b;
+}
+function add (iterator) {
+  console.log('initialize addition');
+  getValues(iterator);
+  const addValue = getValues(iterator);
+  console.log(addValue);
+  const sum = parseInt(addValue.a, 10) + parseInt(addValue.b, 10);
+  console.log('sum', sum);
+  // const sum= a+b;
+}
+
+function getValues(iterator){
+  const a = numbers[iterator];
+  const b = numbers[iterator+1];
+  return  {
+    a: a,
+    b: b,
+  }
+}
+
+// muss noch funktion rein, wass passiert, wenn numbers[0] keine zahl ist, sondern beispielsweise ein minus!
+// vielleicht kann ich die substraktion in der form schreiben, dass sie das minus einfach auf die numbers[i] zieht
+// also nur das minus und die darauf folgende form betrachtet
+// dafür muss ich dann auf die reihenfolge der ausführung achten
+
+// function beforeSignAfter(iterator) {
+  // for (let i=0; i<operator.length; i++) {
+    // let a;
+    // let b;
+    // console.log(numbers[iterator]);
+    // console.log(numbers[iterator+1]);
+    // console.log(operator[iterator]);
+    // console.log('iterator', iterator)
+    // a = numbers[iterator];
+    // console.log('a', a);
+    // b = numbers[iterator+1];
+    // console.log('b', b);
+  // }
+// }
+
+
+
+console.log('EOL')
 
 // for (let i=0; i<number.length; i++) {
 //   console.log(i);
